@@ -47,17 +47,17 @@ def main(argv):
     while True:
         mock_msg = mock_parameters(SENSOR_NAME)
         pprint(mock_msg)
-        producer.send(topic, mock_msg)
+        producer.send(topic, key=bytes('test.sensor', 'utf-8'), value=mock_msg)
         sleep(1)
 
 
 def mock_parameters(sensor_name):
     return_parameter = dict()
-    return_parameter['sensor_name'] = sensor_name
+    return_parameter['assetName'] = sensor_name
     return_parameter['param_1'] = random.random() * 100
     return_parameter['param_2'] = random.random() * 40
     return_parameter['param_3'] = random.random() * 30
-    return_parameter['timestamp'] = datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+    return_parameter['timestamp'] = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
     return return_parameter
 
 
