@@ -1,2 +1,6 @@
 bootstrap_servers:
   - "localhost:9092"
+mqtt:
+  host: localhost
+  port: 1883
+  topic: v1/devices/me/telemetry
