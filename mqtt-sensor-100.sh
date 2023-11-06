@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-.\.venv\Scripts\python .\main_mqtt.py 100
+./.venv/bin/python ./main_mqtt.py 100
